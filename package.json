@@ -1,0 +1,29 @@
+{
+  "name": "ascii-tree",
+  "version": "0.0.1",
+  "description": "A node module for generating a text tree in ASCII",
+  "main": "ascii-tree.js",
+  "scripts": {
+    "test": "mocha ./test/ascii-tree.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liushuping/ascii-tree.git"
+  },
+  "keywords": [
+    "tree",
+    "text",
+    "ascii",
+    "node",
+    "javascript"
+  ],
+  "author": "Shuping LIU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liushuping/ascii-tree/issues"
+  },
+  "homepage": "https://github.com/liushuping/ascii-tree",
+  "dependencies": {
+    "freetree": "~0.1.1"
+  }
+}
