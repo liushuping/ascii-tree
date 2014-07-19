@@ -1,10 +1,9 @@
 var levels = [];
 var freetree = require('freetree');
-var chars = [
-    String.fromCharCode(9500),
-    String.fromCharCode(9472),
-    String.fromCharCode(9492),
-    String.fromCharCode(9474)]; 
+var c0 = String.fromCharCode(9500);
+var c1 = String.fromCharCode(9472);
+var c2 = String.fromCharCode(9492);
+var c3 = String.fromCharCode(9474); 
 
 function generate(str) {
     var tree = freetree.parse(str);
@@ -13,18 +12,18 @@ function generate(str) {
 
 function compose(tree, end) {
     var i, ret = '\r\n';
-    var c = end ? chars[2] : chars[0];
+    var c = end ? c2: c0;
 
     if (tree.level == 0) {
         return tree.value;
     }
 
     for (i = 1; i < tree.level; ++i) {
-        ret += levels[i] ? ' ' : chars[3];
+        ret += levels[i] ? ' ' : c3
         ret += '  ';
     }
 
-    return ret + c + chars[1] + ' ' + tree.value;
+    return ret + c + c1 + ' ' + tree.value;
 }
 
 function _generate(tree, end) {
