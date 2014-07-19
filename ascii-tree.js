@@ -7,20 +7,18 @@ function generate(str) {
     return _generate(tree, true);
 }
 
-function compose(end, value) {
-    var c = end ? chars[2] : chars[0];
-    return '\r\n' + c + chars[1] + ' ' + value;
+function compose(tree, end) {
+    if (tree.level == 0) {
+        return tree.value;
+    } else {
+        var c = end ? chars[2] : chars[0];
+        return '\r\n' + c + chars[1] + ' ' + tree.value;
+    }
 }
 
 function _generate(tree, end) {
-    var i, last;
-    var result = '';
-
-    if (tree.level == 0) {
-        result = tree.value;
-    } else {
-        result += compose(end, tree.value);
-    }
+    var last;
+    var result = compose(tree, end);
 
     if (tree.nodes) {
         last = tree.nodes.length - 1;

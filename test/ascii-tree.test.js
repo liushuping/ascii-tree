@@ -7,13 +7,13 @@ var c3 = String.fromCharCode(9492);
 var inputs = [
     '#root',
     '#root\r\n##level1_1\r\n##level1_2\r\n##level1_3',
-    //'#root\r\n##level1_1\r\n###level2_1\r\n##level1_2'
+//    '#root\r\n##level1_1\r\n###leve2_1\r\n##level1_2'
 ];
 
 var outputs = [
     'root',
     'root\r\n' + c1 + c2 + ' level1_1\r\n' + c1 + c2 + ' level1_2\r\n' + c3 + c2 + ' level1_3',
-    //'root'
+//    'root'
 ];
 
 describe('#generate', function() {
