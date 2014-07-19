@@ -7,19 +7,19 @@ function generate(str) {
     return _generate(tree, true);
 }
 
+function compose(end, value) {
+    var c = end ? chars[2] : chars[0];
+    return '\r\n' + c + chars[1] + ' ' + value;
+}
+
 function _generate(tree, end) {
-    var last;
+    var i, last;
     var result = '';
-    var leadingChars = '';
 
     if (tree.level == 0) {
         result = tree.value;
     } else {
-        if (end) {
-            result += '\r\n' + leadingChars + chars[2] + chars[1] + ' ' + tree.value;
-        } else {
-            result += '\r\n' + leadingChars + chars[0] + chars[1] + ' ' + tree.value;
-        }
+        result += compose(end, tree.value);
     }
 
     if (tree.nodes) {
