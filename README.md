@@ -24,7 +24,9 @@ fs.writeFile('output.txt', tree, 'utf8');
 Then the output.txt will have below contents
 ```
 root node
-
+├─ node1
+│  └─ node11
+└─ node2
 ```
 ## Test
 Make sure `mocha` is installed globally
