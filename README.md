@@ -17,7 +17,7 @@ and then process the file content with ascii-tree to generate the ascii tree.
 ```
 var fs = require('fs');
 var asciitree = require('ascii-tree');
-var str = fs.readFileSync('input.txt', 'utf8);
+var str = fs.readFileSync('input.txt', 'utf8');
 var tree = asciitree.generate(str);
 fs.writeFile('output.txt', tree, 'utf8');
 ```

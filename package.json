@@ -4,7 +4,7 @@
   "description": "A node module for generating a text tree in ASCII",
   "main": "ascii-tree.js",
   "scripts": {
-    "test": "mocha ./test/ascii-tree.test.js"
+    "test": "npm test"
   },
   "repository": {
     "type": "git",
