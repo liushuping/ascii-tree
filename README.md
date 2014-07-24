@@ -3,6 +3,8 @@ ascii-tree
 
 A node module for generating a text tree in ASCII
 
+[![build status](https://travis-ci.org/liushuping/ascii-tree.svg)](https://travis-ci.org/liushuping/ascii-tree.svg)
+
 Editing an ASCII tree manually is not easy, the [freetree](https://github.com/liushuping/freetree) module provides an easy way for creating in-memory tree data structure from simple bullet items. This [ascii-tree](https://github.com/liushuping/ascii-tree module leverages) module leverages [freetree](https://github.com/liushuping/freetree) and outputs formatted tree in ascii characters.
 
 ## Code Example
