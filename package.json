@@ -1,6 +1,6 @@
 {
   "name": "ascii-tree",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A node module for generating a text tree in ASCII",
   "main": "ascii-tree.js",
   "scripts": {
