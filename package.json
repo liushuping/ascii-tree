@@ -1,6 +1,6 @@
 {
   "name": "ascii-tree",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A node module for generating a text tree in ASCII",
   "main": "ascii-tree.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/liushuping/ascii-tree",
   "dependencies": {
-    "freetree": "0.2.0"
+    "freetree": "0.2.2"
   },
   "devDependencies": {
     "mocha": "*"

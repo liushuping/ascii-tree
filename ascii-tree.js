@@ -6,7 +6,10 @@ var c3 = String.fromCharCode(9474);
 
 function generate(str) {
     var levels = [];
-    var tree = freetree.parse(str);
+    var settings = {
+        leadingChar: str[0]
+    };
+    var tree = freetree.parse(str, settings);
     return _generate(tree, true, levels);
 }
 
