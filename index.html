@@ -27,7 +27,76 @@
         </ul>
       </header>
       <section>
-        <p>A node module for generating tree structure in ASCII</p>
+        <h1>
+<a id="ascii-tree" class="anchor" href="#ascii-tree" aria-hidden="true"><span class="octicon octicon-link"></span></a>ascii-tree</h1>
+
+<p>A node module for generating a text tree in ASCII</p>
+
+<p><a href="https://travis-ci.org/liushuping/ascii-tree.svg"><img src="https://travis-ci.org/liushuping/ascii-tree.svg" alt="build status"></a></p>
+
+<p>This module generates an ascii tree representation for a given string bullet list.</p>
+
+<h2>
+<a id="generate-for-a-given-string-bullet-list" class="anchor" href="#generate-for-a-given-string-bullet-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generate for a given string bullet list.</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> asciitree <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>ascii-tree<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> input <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>#root node<span class="pl-cce">\r\n</span>##node1<span class="pl-cce">\r\n</span>###<span class="pl-cce">\r\n</span>node1<span class="pl-cce">\r\n</span>##node2<span class="pl-pds">'</span></span>;
+<span class="pl-k">var</span> tree <span class="pl-k">=</span> asciitree.generate(str);</pre></div>
+
+<p>the output string <code>tree</code> will be in below representation</p>
+
+<pre><code>root node
+├─ node1
+│  └─ node11
+└─ node2
+</code></pre>
+
+<p>The leading character is not necessary to be <code>#</code>, but can be any character, this is helpful to resolve the confliction between the leading character and actual content character.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> asciitree <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>ascii-tree<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> input <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>*root node<span class="pl-cce">\r\n</span>**node1<span class="pl-cce">\r\n</span>***<span class="pl-cce">\r\n</span>node1<span class="pl-cce">\r\n</span>**node2<span class="pl-pds">'</span></span>;
+<span class="pl-k">var</span> tree <span class="pl-k">=</span> asciitree.generate(str);</pre></div>
+
+<p>The line break charachters <code>\r\n</code> are required. </p>
+
+<h2>
+<a id="generate-from-an-input-file" class="anchor" href="#generate-from-an-input-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generate from an input file</h2>
+
+<p>First prepare an input file using bullets representating a tree</p>
+
+<pre><code>#root node
+##node1
+###node11
+##node2
+</code></pre>
+
+<p>again, the leading character is not necessary to be <code>#</code> but can be any character. Then process the file content with ascii-tree to generate the ascii tree</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> fs <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> asciitree <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>ascii-tree<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> str <span class="pl-k">=</span> fs.readFileSync(<span class="pl-s"><span class="pl-pds">'</span>input.txt<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>utf8<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> tree <span class="pl-k">=</span> asciitree.generate(str);
+fs.writeFile(<span class="pl-s"><span class="pl-pds">'</span>output.txt<span class="pl-pds">'</span></span>, tree, <span class="pl-s"><span class="pl-pds">'</span>utf8<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="test" class="anchor" href="#test" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test</h2>
+
+<p>Make sure <code>mocha</code> is installed globally</p>
+
+<pre><code>npm install mocha -g
+</code></pre>
+
+<p>Run <code>npm test</code> to run unit test</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>ascii-tree uses <a href="https://github.com/liushuping/freetree">freetree</a> for creating tree data structure from inputting text</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
       </section>
     </div>
     <footer>
