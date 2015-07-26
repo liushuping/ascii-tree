@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "mocha": "*"
+  },
+  "bin": {
+    "ascii-tree": "ascii-tree.js"
   }
 }

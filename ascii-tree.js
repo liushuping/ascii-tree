@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var freetree = require('freetree');
 var c0 = String.fromCharCode(9500);
 var c1 = String.fromCharCode(9472);
@@ -44,4 +46,22 @@ function _generate(tree, end, levels) {
     return result;
 }
 
+function read() {
+    var lines = '';
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('readable', function() {
+        var chunk = process.stdin.read();
+        if (chunk !== null) {
+            lines += chunk;
+        }
+    })
+        .on('end', function() {
+            process.stdout.write(generate(lines.trim()));
+        })
+}
+
 exports.generate = generate;
+
+if (require.main === module) {
+    read();
+}
