@@ -26,7 +26,7 @@ var asciitree = require('ascii-tree');
 var input = '*root node\r\n**node1\r\n***\r\nnode1\r\n**node2';
 var tree = asciitree.generate(str);
 ```
-The line break charachters `\r\n` are required. 
+The line break characters `\r\n` are required. 
 
 ## Generate from an input file
 First prepare an input file using bullets representating a tree
