@@ -11,7 +11,7 @@ This module generates an ascii tree representation for a given string bullet lis
 ```javascript
 var asciitree = require('ascii-tree');
 var input = '#root node\r\n##node1\r\n###\r\nnode1\r\n##node2';
-var tree = asciitree.generate(str);
+var tree = asciitree.generate(input);
 ```
 the output string `tree` will be in below representation
 ```
@@ -24,7 +24,7 @@ The leading character is not necessary to be `#`, but can be any character, this
 ```javascript
 var asciitree = require('ascii-tree');
 var input = '*root node\r\n**node1\r\n***\r\nnode1\r\n**node2';
-var tree = asciitree.generate(str);
+var tree = asciitree.generate(input);
 ```
 The line break characters `\r\n` are required. 
 
